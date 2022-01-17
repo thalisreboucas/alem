@@ -1,4 +1,8 @@
+#
 # import libraries
+# libraries used for this aplication
+#
+
 library(shiny)
 library(dplyr)
 library(glue)
