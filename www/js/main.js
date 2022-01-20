@@ -82,6 +82,25 @@
 
 		}
 
+// Menu
+
+var clMenuOnScrolldown = function() {
+        
+        var menuTrigger = $('.header-menu-toggle');
+
+        $WIN.on('scroll', function() {
+
+            if ($WIN.scrollTop() > 150) {
+                menuTrigger.addClass('opaque');
+            }
+            else {
+                menuTrigger.removeClass('opaque');
+            }
+
+        });
+    };
+
+
 	// Gallery.
 		$('.gallery')
 			.on('click', 'a', function(event) {
