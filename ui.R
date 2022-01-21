@@ -19,6 +19,4 @@ ui = shiny::htmlTemplate(
   
   final = htmlTemplate("www/partial/final.html") ,
   
-  tags$head(tags$link(rel="shortcut icon", href="/images/favicon.png"))
-  
   )
