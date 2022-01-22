@@ -22,3 +22,4 @@ summary(fit)
 plot(fit, what = "BIC")
 
 plot(fit, what = "classification")
+
