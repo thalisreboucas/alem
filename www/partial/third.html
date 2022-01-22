@@ -5,7 +5,11 @@
 						</header>
 						<div class="content">
 							 <!-- Escrever -->
-									  <p>A seguir iremos motrar um pouco dessa ferramenta com aplicações em dados por meio do programa <strong>R</strong> e essa ferramenta está presente em alguns <strong>pacotes</strong> como "EMCluster","frailtyEM","turboEM" ,etc.</p>
+									  <p>A seguir iremos motrar um pouco dessa ferramenta com aplicações em dados por meio do programa <strong>R</strong> e essa ferramenta está presente em alguns <strong>pacotes</strong> como 
+									  <a href="https://cran.r-project.org/web/packages/EMCluster/index.html">MCluster</a>,
+									  <a href="https://cran.r-project.org/web/packages/frailtyEM/index.html">frailtyEM</a>",
+									  <a href="https://cran.r-project.org/web/packages/turboEM/index.html">"turboEM"</a>,
+									  etc.</p>
 									  <p> É importante saber algumas etapas e alguns conceitos que é nescessário para a aplicação. 
 									  </p>
 									  </div>
@@ -20,40 +24,35 @@
 						<div class="content">
 						  <p> Conhecemos essa função de inferência que serve para <strong>estimar estatísticas populacionais </strong>.
 						  De maneira geral, posto um conjunto de dados e um modelo estatístico, o método de máxima verossimilhança estima os valores dos diferentes parâmetros do modelo estatístico de maneira a maximizar a probabilidade dos dados observados (isto é, busca parâmetros que maximizem a função de verossimilhança). É importante saber um pouco dessa função para essa aplicação.
+						  <a href="https://pt.wikipedia.org/wiki/M%C3%A1xima_verossimilhan%C3%A7a">Clique aqui</a> para ler mais sobre.
 						  </p>
 						</div>
 						</section>
 
-                <!-- Section -->
-								<section>
-									<header>
-										<h3> Imputação de Dados com <strong>Amelia</strong> </h3>
-										<p> É uma parte da manipulação/tratamento de dados que substiu os valores <strong>NA</strong> por meio de técnicas estatísticas para melhorar os valores da amostra.
-										</p>
-										<p>
-										  <a href="https://cran.r-project.org/web/packages/Amelia/index.html">Amelia</a> é um pacote para dados faltantes e possui o <strong>EM</strong> como um método de imputação.
-										</p>
-									</header>
-									<div class="content">
-									  <!-- Escrever -->
-									  <p>Escreva aqui...</p>
-									</div>
-								</section>
+   <!-- How this Works -->
+							  
+							  <section>
+						<header>
+						  <h2> Algoritmo EM que diabeisso ?</h2>
+						</header>
+						<div class="content">
+						  <p> 
+						 Dado um modelo estatístico que gera um conjunto \(X\) de dados observados, um conjunto de dados latentes não observados ou valores faltando \(Z\), e um vetor de parâmetros desconhecidos \(\theta\), juntamente com uma função de probabilidade\( L(\phi; X,Z)=p(X,Z| \phi) \), a estimativa de probabilidade máxima (MLE) dos parâmetros desconhecidos é determinada pela probabilidade marginal dos dados observados
+\[L(\phi; X)=p(X| \phi)=\sum{Z p(X,Z| \phi) }\]. <br>
+              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase <strong>EM </strong> busca encontrar o MLE da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
+						  </p>
+						  <p>
+						    <strong>1. Etapa de expectativa</strong> :  os dados (ausentes) são estimados dado os dados observados e as estimativas atuais dos parâmetros do modelo calcula-se o valor esperado da função de probabilidade de \(\log\), em relação à distribuição condicional de \(Z\) dado \(X\) sob a estimativa atual dos parâmetros \(\theta(t)\):
+						   \[ Q(\boldsymbol\theta|\boldsymbol\theta^{(t)}) = \operatorname{E}_{\mathbf{Z}|\mathbf{X},\boldsymbol\theta^{(t)}}\left[ \log L (\boldsymbol\theta;\mathbf{X},\mathbf{Z})  \right] \ \]
+						  </p>
+						  <p>
+						    <strong>2. Etapa de maximização:</strong> A função de probabilidade é maximizada sob a suposição de que os dados (ausentes) são conhecidos com isso essa etapa encontra o parâmetro que maximiza essa quantidade. 
+						    \[\boldsymbol\theta^{(t+1)} = \underset{\boldsymbol\theta}{\operatorname{arg\,max}} \ Q(\boldsymbol\theta|\boldsymbol\theta^{(t)}) 
 
-
-							<!-- Section -->
-								<section>
-									<header>
-										<h3>Cluster com o Algoritimo EM</h3>
-										<p> <strong>Cluster </strong> é uma ferramenta para analise de agrupamento na qual tenda separar em grupo dados segunda o seu grau de semelhança.</p>
-									</header>
-									<div class="content">
-									 <!-- Escrever -->
-									  <p>Escreva aqui...</p>
-									</div>
-								</section>
-								
-								<!--
-													  <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/' frameborder='0'></iframe>
-							-->
+						    \] 
+						    E com isso o Algoritmo repete isso até achar o local de máximo.
+						  </p>
+						</div>
+						</section>
+              
 									
