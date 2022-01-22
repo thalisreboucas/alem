@@ -20,6 +20,7 @@ amelia_fit <- amelia(iris.na, m=5, parallel = "multicore", noms = "Species")
 
 summary(amelia_fit)
 
+plot(amelia_fit)
 
 hist(iris$Sepal.Width)
 hist(iris.na$Sepal.Width)
