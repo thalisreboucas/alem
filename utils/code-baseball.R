@@ -6,12 +6,16 @@
 #
 ###
 
+
+# Library i need
 library(dplyr , quietly = TRUE)
 library(tidyr , quietly = TRUE)
 library(Lahman , quietly = TRUE)
 library(ggplot2 , quietly = TRUE)
 library(tibble ,quietly = TRUE)
 library(plotly,quietly = TRUE)
+library(purrr , quietly = TRUE)
+library(VGAM,quietly = TRUE)
 
 theme_set(theme_bw())
 
@@ -70,8 +74,7 @@ starting_data_dens %>%
    yaxis = list(title = "Densidade",
              ticks = 'outside'))
 
- 
-library(VGAM,quietly = TRUE)
+ # Function Beta Binomial
  
  fit_bb_mle <- function(x, n) {
    # dbetabinom.ab is the likelihood function for a beta-binomial
@@ -106,8 +109,56 @@ library(VGAM,quietly = TRUE)
    dplyr::top_n(1, likelihood) %>%
    dplyr::ungroup()
 
- ggplot(assignments, aes(average, fill = cluster)) +
+ ggplot2::ggplot(assignments, aes(average, fill = cluster)) +
    geom_histogram(bins = 80) 
 
-  
+ 
+ # Algorithm EM
+ 
+ iterate_em <- function(state, ...) {
+   fits <- state$assignments %>%
+     dplyr::group_by(cluster) %>%
+     dplyr::do(mutate(fit_bb_mle(.$H, .$AB), number = nrow(.))) %>%
+     dplyr::ungroup() %>%
+     dplyr::mutate(prior = number / sum(number))
+   assignments <- assignments %>%
+     dplyr::select(playerID:average) %>%
+     tidyr::crossing(fits) %>%
+     dplyr::mutate(likelihood = prior * VGAM::dbetabinom.ab(H, AB, alpha, beta)) %>%
+     dplyr::group_by(playerID) %>%
+     dplyr::top_n(1, likelihood) %>%
+     dplyr::ungroup()
+   
+   list(assignments = assignments,
+        fits = fits)
+ }
+ 
+ 
+ iterations <- purrr::accumulate(1:5, iterate_em, .init = list(assignments = starting_data))
+
+ fit_iterations <- iterations %>%
+   map_df("fits", .id = "iteration")
+ fit_iterations %>%
+   tidyr::crossing(x = seq(.001, .4, .001)) %>%
+   dplyr::mutate(density = prior * dbeta(x, alpha, beta)) %>%
+   ggplot2::ggplot(aes(x, density, color = iteration, group = iteration)) +
+   geom_line() +
+   facet_wrap(~ cluster)  
+ 
+ batter_100 <- career %>%
+   dplyr::filter(AB == 100) %>%
+   dplyr::arrange(average)
+ batter_100
+ 
+ # EM CLUSTER
+ career_likelihoods <- career %>%
+   dplyr::filter(AB > 20) %>%
+   tidyr::crossing(final_parameters) %>%
+   dplyr::mutate(likelihood = prior * VGAM::dbetabinom.ab(H, AB, alpha, beta)) %>%
+   dplyr::group_by(playerID) %>%
+   dplyr::mutate(posterior = likelihood / sum(likelihood))
+ 
+ career_assignments <- career_likelihoods %>%
+   dplyr::top_n(1, posterior) %>%
+   dplyr::ungroup()
  
