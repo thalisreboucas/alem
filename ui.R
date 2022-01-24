@@ -19,6 +19,7 @@ ui = shiny::htmlTemplate(
   
   fourth = htmlTemplate("www/partial/fourth.html"),
   
-  final = htmlTemplate("www/partial/final.html") ,
+  final = htmlTemplate("www/partial/final.html") 
+  
   
   )
