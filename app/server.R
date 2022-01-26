@@ -4,12 +4,12 @@
 
 server <- function(input, output) {
   
-  # Number of kilometers in UI
-  output$num_int_eruption <- renderText({
-   print(mix_erupt$interactions)
+  # Number of trips text in UI
+  output$num_trips <- renderText({
+    df.geyser  %>%  summarise(media = mean(eruptions)) 
   })
   
 }
 
-shinyApp(ui,server)
+
 

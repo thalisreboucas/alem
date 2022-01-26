@@ -8,11 +8,12 @@
 
 ui =  shiny::htmlTemplate(
   # Index Page
-  "www/index.html" ,
-  
- int_eruption =  shiny::textOutput(
-    "num_int_eruption",
-    inline = T)
+  "index.html" ,
+  # Number of trips
+  number_of_trips = textOutput(
+    "num_trips",
+    inline = T
+  )
   
   )
  

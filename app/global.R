@@ -25,5 +25,4 @@ source("utils/df_geyser.R")
 source("utils/ui-utils.R")
 
 # modes codes
-
-source("modules/module_data.R")
+source("modules/module_ui.R")
