@@ -22,30 +22,212 @@
 			<div id="wrapper">
         
 			  <!-- Intro -->
-			
-		    	{{ intro}}
-		    	
-				<!-- Section -->
-					
-					{{ first }}
 
-				<!-- Section -->
-				
-					{{ second }}
+  <section class="intro">
+				<header>
+						<h1> Algoritimo EM </h1>
+				    	<p> Um <a href="https://shiny.rstudio.com/" > Shiny App </a> explicando melhor sobre essa ferramenta estatística por 
+				    	<a href="https://github.com/thalisreboucas/">Thalis Rebouças</a> e <br> 
+							Anderson Esteves.</p>
+							
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Proximo</span></a></li>
+							</ul>
+							
+						</header>
+						
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
+						</div>
+						
+</section> 
 					
-				<!-- Section -->
+			  <!-- Section first (Apresetation of Al.EM )  -->
 				 
-				  {{ third }}
-				  
-				<!-- Section -->
-				 
-				  {{ fourth }}
-				  
-				<!-- Section -->
+<section id="first">
+						<header>
+						  
+							<h2>O que é o Algoritimo EM ?</h2>
+							
+						</header>
+						
+						
+						<div class="content">
+							<p><strong>Algoritmo de maximização de expectativa</strong>.
+							É um método interativo baseado em uma maximização para estimar os parâmentros da distribuições apatir dos dados da amostra. Os dados podem ser variáveis latentes, ou seja, não observadas de forma quantativa inicialmente, nesta ferramentas pode utilizar o banco de dados com dados faltantes ,pois em uma das etapas ocorre a inputanção de dados para estimar o modelo. </p> 
+							<p>
+							A iteração EM alterna entre executar uma etapa de expectativa (E), e uma de maximização (M). A etapa de expectativa cria uma função para a expectativa da verossimilhança logarítmica usando a estimativa atual para os parâmetros. A etapa de maximização (M), calcula parâmetros para maximizar a verossimilhança logarítmica encontrada na etapa E. Essas estimativas de parâmetro são usadas para determinar a distribuição das variáveis latentes na próxima etapa E, e o algoritmo se repete várias vezes (por isso é chamado iterativo).</p>
+							
+							<!--<span class="image main"><img src="images/pic02.jpg" alt="" /></span>-->
+							
+						</div>
+</section>
+
 				
-				  {{ final }}
+				 <!-- Section second (Curiosits about the Al.EM)  -->
+					  
+<section id = "second">
+						<header>
+							<h2>Aplicações dessa ferramenta</h2>
+						</header>
+						<div class="content">
+							<p><strong>Algoritmo de maximização de expectativa</strong> tem como umas principais aplicações em <strong>"Machine Learning"</strong> , <strong>"Visão Computacional"</strong> e <strong> modelagem estatística</strong>.</p>
+							
+							<p> Tem alguns aplicações em <strong>"NLP"</strong>(Processsamento de Linguagem Natural).duas instâncias proeminentes do algoritmo são o algoritmo de Baum-Welch para modelos ocultos de Markov e o algoritmo de dentro para fora para indução não supervisionada de gramáticas livres de contexto estocásticas.
+							</p>
+							<p>
+							  Tem alguns aplicações na área da saúde como a reconstrução de imagens médicas, especialmente em tomografia por emissão de pósitrons, tomografia computadorizada por emissão de fóton único, e tomografia computadorizada ,na área da psicometria, o EM é quase indispensável para estimar parâmetros de itens e habilidades latentes nos modelos de teoria de respostas ao item.O algoritmo de EM é usado para estimativa de parâmetros de modelos de misturas gaussianas,principalmente na genética quantitativa.
+							</p>
+							<p>
+							  Na engenharia estrutural, o algoritmo de Identificação Estrutural usando Maximização de Expectativas (STRIDE, sigla do inglês) é um método somente de saída para identificar propriedades de vibração natural de um sistema estrutural usando dados de sensores (consulte Análise Modal Operacional).
+							</p>
+							
+						</div>
+					</section>
+
+
+<section id = "second_1">
+						<header>
+							<h2>Vantagens dessa ferramenta</h2>
+						</header>
+						<div class="content">
+							<p><strong>A seguir </strong> algumas vantagens dessa super ferramenta:</p>
+							<ul class="feature-icons">
+								<li class="icon solid fa-bolt"> Cada interação é garatindo que verossimilhança aumentará </li>
+								<li class="icon solid fa-cogs"> Etapas Bem definidas </li>
+								<li class="icon solid fa-code"> Fácil implementação </li>
+								<li class="icon solid fa-magic"> Possui mais de uma função </li>
+							</ul>
+							<p><strong>Algumas desvatagens</strong></p>
+							<p>Pode ter uma convergência lenta , faz convergência apenas para o local ótimo e requer tanto as probabilidades, para frente e para trás (a otimização numérica requer apenas probabilidade para a frente).</p>
+						</div>
+					</section>
+
+				 
+				  <!-- Section third ( Show the App )  -->
 				  
-				  {{ letrs }}
+          <section id = "third">
+						<header>
+							<h2>Implementação em R</h2>
+						</header>
+						<div class="content">
+							 <!-- Escrever -->
+									  <p>A seguir iremos motrar um pouco dessa ferramenta com aplicações em dados por meio do programa <strong>R</strong> e essa ferramenta está presente em alguns <strong>pacotes</strong> como 
+									  <a href="https://cran.r-project.org/web/packages/EMCluster/index.html">MCluster</a>,
+									  <a href="https://cran.r-project.org/web/packages/frailtyEM/index.html">frailtyEM</a>",
+									  <a href="https://cran.r-project.org/web/packages/turboEM/index.html">"turboEM"</a>,
+									  etc.</p>
+									  <p> É importante saber algumas etapas e alguns conceitos que é nescessário para a aplicação. 
+									  </p>
+									  </div>
+							</section>
+							  
+					<!-- Maxima Verossimilhança -->
+							  
+					<section id = "third_2">
+						<header>
+						  <h2> Função de Maxima Verossimilhança</h2>
+						</header>
+						<div class="content">
+						  <p> Conhecemos essa função de inferência que serve para <strong>estimar estatísticas populacionais </strong>.
+						  De maneira geral, posto um conjunto de dados e um modelo estatístico, o método de máxima verossimilhança estima os valores dos diferentes parâmetros do modelo estatístico de maneira a maximizar a probabilidade dos dados observados (isto é, busca parâmetros que maximizem a função de verossimilhança). É importante saber um pouco dessa função para essa aplicação.
+						  <a href="https://pt.wikipedia.org/wiki/M%C3%A1xima_verossimilhan%C3%A7a">Clique aqui</a> para ler mais sobre.
+						  </p>
+						</div>
+						</section>
+
+           <!-- How this Works -->
+							  
+					<section id= "third_3">
+						<header>
+						  <h2> Algoritmo EM que diabeisso ?</h2>
+						</header>
+						<div class="content">
+						  <p> 
+						 Dado um modelo estatístico que gera um conjunto \(X\) de dados observados, um conjunto de dados latentes não observados ou valores faltando \(Z\), e um vetor de parâmetros desconhecidos \(\theta\), juntamente com uma função de probabilidade\( L(\phi; X,Z)=p(X,Z| \phi) \), a estimativa de probabilidade máxima (MLE) dos parâmetros desconhecidos é determinada pela probabilidade marginal dos dados observados
+\[L(\phi; X)=p(X| \phi)=\sum{Z p(X,Z| \phi) }\]. <br>
+              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase <strong>EM </strong> busca encontrar o MLE da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
+						  </p>
+						  <p>
+						    <strong>1. Etapa de expectativa</strong> :  os dados (ausentes) são estimados dado os dados observados e as estimativas atuais dos parâmetros do modelo calcula-se o valor esperado da função de probabilidade de \(\log\), em relação à distribuição condicional de \(Z\) dado \(X\) sob a estimativa atual dos parâmetros \(\theta(t)\):
+						   \[ Q(\boldsymbol\theta|\boldsymbol\theta^{(t)}) = \operatorname{E}_{\mathbf{Z}|\mathbf{X},\boldsymbol\theta^{(t)}}\left[ \log L (\boldsymbol\theta;\mathbf{X},\mathbf{Z})  \right] \ \]
+						  </p>
+						  <p>
+						    <strong>2. Etapa de maximização:</strong> A função de probabilidade é maximizada sob a suposição de que os dados (ausentes) são conhecidos com isso essa etapa encontra o parâmetro que maximiza essa quantidade. 
+						    \[\boldsymbol\theta^{(t+1)} = \underset{\boldsymbol\theta}{\operatorname{arg\,max}} \ Q(\boldsymbol\theta|\boldsymbol\theta^{(t)}) 
+
+						    \] 
+						    E com isso o Algoritmo repete isso até achar o local de máximo.
+						  </p>
+						</div>
+						</section>
+				 
+				  <!-- section R aplication -->
+
+
+          <section id = "fourth">
+									<header>
+										<h3>Mixtura de modelos com EM </h3>
+										<p> <strong>Mixtura de modelos  </strong> Nas estatísticas,um modelo de mistura é um modelo probabilístico para representar a presença de subpopulações dentro de uma população geral, sem exigir que um conjunto de dados observados deva identificar a subpopulação à qual pertence uma observação individual. </p>
+									</header>
+									<div class="content">
+									  <p>Para explicar melhor o funcionamento desse algoritmo irimos aplica-lo em base de dados de erupções de gêiser em Old Faithful  na qual esses dados possui uma distribuição normal multivariada. Com isso vamos seguir um código baseado no livro Murphy, 2012 Probabilistic Machine Learning, specifically, Capítulo 11, seção 4.</p>
+									  <p>
+									    temos que o numero de iterações foi <strong> {{ int_eruption }} </strong>
+									  </p>
+						  
+									</div>
+								</section>
+
+				  <!-- Section Final ( Referencess) -->
+				  
+					<section id = "final">
+						<header>
+							<h2>Referências </h2>
+						</header>
+						<div class="content">
+						  
+							<p><strong>Sites que eu usei como referência para essa aplicação.</strong> </p>
+							
+						
+							<p>
+						    1.<a href="http://rstudio-pubs-static.s3.amazonaws.com/1001_3177e85f5e4840be840c84452780db52.html">
+						     Understanding the EM Algorithm.</a>			
+						  </p>
+						  
+							<p>
+							  2.<a href="https://pt.wikipedia.org/wiki/Algoritmo_de_maximiza%C3%A7%C3%A3o_de_expectativa" >
+							  Wikipedia.</a>			
+							</p>
+							
+								<p>
+							  3.<a href="https://www.geeksforgeeks.org/ml-expectation-maximization-algorithm/" >
+							  ML | Expectation-Maximization Algorithm.</a>			
+							</p>
+							<p>
+							  4.<a href="https://rpubs.com/H_Zhu/246450"> EM Algorithm Implementation.</a>
+							</p>
+							<p>
+							  5.<a href="https://m-clark.github.io/models-by-example/">Model Estimation by Example Book.</a>
+							</p>
+							
+							
+							<ul class="actions">
+								<li><a href="https://github.com/thalisreboucas/alem" class="button primary large">Codigos no Github</a></li>
+							<li><a href="https://rstudio.cloud/project/3477333" class="button primary large"> Brincar com EM no R </a></li> 
+							</ul>
+						
+						</div>
+						<br> 
+						
+						
+							<!-- Copyright -->
+					<div class="copyright">
+					  &copy; Thalis Rebouças. Todos os Direitos Reservados. Design: <a href="https://html5up.net">HTML5 UP</a>.
+					 </div>
+						
+					</section>
+					
 				  
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>

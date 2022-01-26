@@ -6,7 +6,7 @@ server <- function(input, output) {
   
   # Number of kilometers in UI
   output$num_int_eruption <- renderText({
-   mix_erupt$interactions
+   print(mix_erupt$interactions)
   })
   
 }
