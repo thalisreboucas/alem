@@ -21,7 +21,10 @@ ui =  shiny::htmlTemplate(
   fourth = htmlTemplate("www/partial/fourth.html"),
  
   final = htmlTemplate("www/partial/final.html")  ,
-
+  
+  letrs =  shiny::textOutput(
+    "num_int_eruption",
+    inline = T)
   
   )
  
