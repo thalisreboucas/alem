@@ -18,3 +18,6 @@ library(future)
 library(promises)
 library(roxygen2)
 library(mathjaxr)
+
+source("utils/em_function.R")
+source("utils/df_geyser.R")

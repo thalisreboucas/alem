@@ -5,7 +5,8 @@
 
 # Define UI for application that draws a Algorithm EM 
 
-ui = shiny::htmlTemplate(
+
+ui =  shiny::htmlTemplate(
   # Index Page
   "www/index.html" ,
   
@@ -18,8 +19,9 @@ ui = shiny::htmlTemplate(
   third = htmlTemplate("www/partial/third.html"),
   
   fourth = htmlTemplate("www/partial/fourth.html"),
-  
-  final = htmlTemplate("www/partial/final.html") 
-  
+ 
+  final = htmlTemplate("www/partial/final.html")  ,
+
   
   )
+ 
