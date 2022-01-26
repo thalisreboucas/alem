@@ -19,5 +19,11 @@ library(promises)
 library(roxygen2)
 library(mathjaxr)
 
+# utils codes
 source("utils/em_function.R")
 source("utils/df_geyser.R")
+source("utils/ui-utils.R")
+
+# modes codes
+
+source("modules/module_data.R")
