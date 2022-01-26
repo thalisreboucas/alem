@@ -8,12 +8,6 @@
 
 ui =  shiny::htmlTemplate(
   # Index Page
-  "index.html" ,
-  # Number of trips
-  number_of_trips = textOutput(
-    "num_trips",
-    inline = T
-  )
-  
+  "index.html" 
   )
  
