@@ -143,13 +143,13 @@
 							  
   <section id= "third_3">
 						<header>
-						  <h2> Algoritmo EM que diabeisso ?</h2>
+						  <h2> O que é o Algoritmo EM ?</h2>
 						</header>
 						<div class="content">
 						  <p> 
 						 Dado um modelo estatístico que gera um conjunto \(X\) de dados observados, um conjunto de dados latentes não observados ou valores faltando \(Z\), e um vetor de parâmetros desconhecidos \(\theta\), juntamente com uma função de probabilidade\( L(\phi; X,Z)=p(X,Z| \phi) \), a estimativa de probabilidade máxima (MLE) dos parâmetros desconhecidos é determinada pela probabilidade marginal dos dados observados
 \[L(\phi; X)=p(X| \phi)=\sum{Z p(X,Z| \phi) }\]. <br>
-              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase <strong>EM </strong> busca encontrar o MLE da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
+              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase em quw  busca encontrar o <strong>MLE</strong> da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
 						  </p>
 						  <p>
 						    <strong>1. Etapa de expectativa</strong> :  os dados (ausentes) são estimados dado os dados observados e as estimativas atuais dos parâmetros do modelo calcula-se o valor esperado da função de probabilidade de \(\log\), em relação à distribuição condicional de \(Z\) dado \(X\) sob a estimativa atual dos parâmetros \(\theta(t)\):
@@ -190,12 +190,13 @@
 						  <p>
 						    Nesses exemplos iremos utilizar o banco de dados Iris ,que é uma banco de dados com informações de algumas medidas da flor iris e suas espécies.O conjunto de dados flor Iris ou conjunto de dados Iris de Fisher é um conjunto de dados multivariados introduzido pelo estatístico e biólogo britânico Ronald Fisher em seu artigo de 1936, O uso de múltiplas medições em problemas taxonômicos,como um exemplo de análise discriminante linear.
 						  </p>
+
+						  <br>
 						  
 						  <ul class = "action" >
-						  	<li> <a 
+						  	<a 
 						  	href="https://rstudio.cloud/project/3477333" class="button primary large"> 
 						  	Vamos para o R  </a>
-						  	</li> 
 						  	</ul>
 						  
 						</div>
