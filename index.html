@@ -57,7 +57,7 @@
 						
 						<div class="content">
 							<p><strong>Algoritmo de maximização de expectativa</strong>.
-							É um método interativo baseado em uma maximização para estimar os parâmentros da distribuições apatir dos dados da amostra. Os dados podem ser variáveis latentes, ou seja, não observadas de forma quantativa inicialmente, nesta ferramentas pode utilizar o banco de dados com dados faltantes ,pois em uma das etapas ocorre a inputanção de dados para estimar o modelo. </p> 
+							É um método interativo baseado em uma maximização para estimar os parâmentros da distribuições a patir dos dados da amostra. Os dados podem ser variáveis latentes, ou seja, não observadas de forma quantitativa inicialmente, nesta ferramentas pode utilizar o banco de dados com dados faltantes ,pois em uma das etapas ocorre a imputação de dados para estimar o modelo. </p> 
 							<p>
 							A iteração EM alterna entre executar uma etapa de expectativa (E), e uma de maximização (M). A etapa de expectativa cria uma função para a expectativa da verossimilhança logarítmica usando a estimativa atual para os parâmetros. A etapa de maximização (M), calcula parâmetros para maximizar a verossimilhança logarítmica encontrada na etapa E. Essas estimativas de parâmetro são usadas para determinar a distribuição das variáveis latentes na próxima etapa E, e o algoritmo se repete várias vezes (por isso é chamado iterativo).</p>
 							
@@ -143,13 +143,13 @@
 							  
   <section id= "third_3">
 						<header>
-						  <h2> O que é o Algoritmo EM ?</h2>
+						  <h2> Como funciona o Algoritmo EM ?</h2>
 						</header>
 						<div class="content">
 						  <p> 
-						 Dado um modelo estatístico que gera um conjunto \(X\) de dados observados, um conjunto de dados latentes não observados ou valores faltando \(Z\), e um vetor de parâmetros desconhecidos \(\theta\), juntamente com uma função de probabilidade\( L(\phi; X,Z)=p(X,Z| \phi) \), a estimativa de probabilidade máxima (MLE) dos parâmetros desconhecidos é determinada pela probabilidade marginal dos dados observados
+						 Dado um modelo estatístico que gera um conjunto \(X\) de dados observados, um conjunto de dados latentes não observados ou valores faltantes \(Z\), e um vetor de parâmetros desconhecidos \(\theta\), juntamente com uma função de probabilidade\( L(\phi; X,Z)=p(X,Z| \phi) \), a estimativa de probabilidade máxima (MLE) dos parâmetros desconhecidos é determinada pela probabilidade marginal dos dados observados
 \[L(\phi; X)=p(X| \phi)=\sum{Z p(X,Z| \phi) }\]. <br>
-              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase em quw  busca encontrar o <strong>MLE</strong> da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
+              Com isso cria-se um modelo \( \theta_0\) e um modelo com parâmentros arbitrários e com isso seguimos para a fase em que  busca encontrar o <strong>MLE</strong> da probabilidade marginal aplicando iterativamente as duas etapas a seguir :
 						  </p>
 						  <p>
 						    <strong>1. Etapa de expectativa</strong> :  os dados (ausentes) são estimados dado os dados observados e as estimativas atuais dos parâmetros do modelo calcula-se o valor esperado da função de probabilidade de \(\log\), em relação à distribuição condicional de \(Z\) dado \(X\) sob a estimativa atual dos parâmetros \(\theta(t)\):
